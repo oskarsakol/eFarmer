@@ -8,7 +8,7 @@ ROOT_DIR = (
     environ.Path(__file__) - 3
 )  # (efarmer/config/settings/base.py - 3 = efarmer/)
 APPS_DIR = ROOT_DIR.path("efarmer")
-
+DJANGO_READ_DOT_ENV_FILE = True
 env = environ.Env()
 
 READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=False)

@@ -329,7 +329,7 @@ project_test/media/
 
 
 .ipython/
-.envs
+
 .env
 .envs/*
 !.envs/.local/

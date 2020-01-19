@@ -1,6 +1,6 @@
 # eFarmer
 
-[![Build Status](https://travis-ci.org/oskarsakol/eFarmer.svg?branch=master)](https://travis-ci.com/oskarsakol/eFarmer)
+[![Build Status](https://travis-ci.org/oskarsakol/eFarmer.svg?branch=master)](https://travis-ci.com/oskarsakol/eFarmer.svg?branch=master)
 
 
 Api for farmer sales market. Check out the project's [documentation](http://oskarsakol.github.io/eFarmer/).

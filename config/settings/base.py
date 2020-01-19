@@ -42,7 +42,7 @@ LOCALE_PATHS = [ROOT_DIR.path("locale")]
 # DATABASES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {"default": env.db("DATABASE_URL")}
+DATABASES = {'default': env.db('DATABASE_URL', default='postgres:///{{cookiecutter.project_slug}}'), }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # URLS
@@ -233,7 +233,7 @@ LOGGING = {
     "formatters": {
         "verbose": {
             "format": "%(levelname)s %(asctime)s %(module)s "
-            "%(process)d %(thread)d %(message)s"
+                      "%(process)d %(thread)d %(message)s"
         }
     },
     "handlers": {
@@ -282,7 +282,6 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_ADAPTER = "efarmer.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = "efarmer.users.adapters.SocialAccountAdapter"
-
 
 # Your stuff...
 # ------------------------------------------------------------------------------

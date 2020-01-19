@@ -29,8 +29,8 @@ class UserCreateViewSet(mixins.CreateModelMixin,
     serializer_class = CreateUserSerializer
     permission_classes = (AllowAny,)
 
-class UserDetailView(LoginRequiredMixin, DetailView):
 
+class UserDetailView(LoginRequiredMixin, DetailView):
     model = User
     slug_field = "username"
     slug_url_kwarg = "username"

@@ -35,7 +35,7 @@ REDIS_URL=redis://redis:6379/0
 
 # Celery
 # ------------------------------------------------------------------------------
-CELERY_BROKER_URL=redis://localhost:6379/0
+
 # Flower
 CELERY_FLOWER_USER=fTDMcsqPdwEgxbHPtKKycCTMXgnFxzXV
 CELERY_FLOWER_PASSWORD=Uk6tqbENtjvp0WhBdriclMPv5aYaqUf8xZWcemKYGWYUGIOCgAlhF295lFn8Ftbq

@@ -42,7 +42,7 @@ LOCALE_PATHS = [ROOT_DIR.path("locale")]
 # DATABASES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {'default': env.db('DATABASE_URL', default='postgres:///{{cookiecutter.project_slug}}'), }
+DATABASES = {'default': env.db("DATABASE_URL", default="postgres:///{{cookiecutter.project_slug}}"), }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # URLS
@@ -252,7 +252,7 @@ if USE_TZ:
     # http://docs.celeryproject.org/en/latest/userguide/configuration.html#std:setting-timezone
     CELERY_TIMEZONE = TIME_ZONE
 # http://docs.celeryproject.org/en/latest/userguide/configuration.html#std:setting-broker_url
-CELERY_BROKER_URL = env("REDIS_URL")
+CELERY_BROKER_URL = env("REDIS_URL", default="redis://redis:6379/0")
 # http://docs.celeryproject.org/en/latest/userguide/configuration.html#std:setting-result_backend
 CELERY_RESULT_BACKEND = CELERY_BROKER_URL
 # http://docs.celeryproject.org/en/latest/userguide/configuration.html#std:setting-accept_content

@@ -8,13 +8,14 @@ ROOT_DIR = (
     environ.Path(__file__) - 3
 )  # (efarmer/config/settings/base.py - 3 = efarmer/)
 APPS_DIR = ROOT_DIR.path("efarmer")
-DJANGO_READ_DOT_ENV_FILE = True
+# DJANGO_READ_DOT_ENV_FILE = False
+
 env = environ.Env()
 
 READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=False)
 if READ_DOT_ENV_FILE:
     # OS environment variables take precedence over variables from .env
-    env.read_env(str(ROOT_DIR.path(".env")))
+    env.read_env(str(ROOT_DIR.path(".envs/.local/.django")))
 
 # GENERAL
 # ------------------------------------------------------------------------------
@@ -217,7 +218,7 @@ EMAIL_TIMEOUT = 5
 # Django Admin URL.
 ADMIN_URL = "admin/"
 # https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = [("""Daniel Roy Greenfeld""", "daniel-roy-greenfeld@example.com")]
+ADMINS = [("""Oskar Sąkol""", "oskar-sakol@example.com")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
 

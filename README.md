@@ -24,6 +24,12 @@ Run a command inside the docker container:
 docker-compose run --rm web [command]
 ```
 
+For example creation of superuser:
+
+```bash
+docker-compose run --rm django python manage.py createsuperuser
+```
+
 # Continuous Deployment
 
 Deployment is automated via Travis. When builds pass on the master or qa branch, Travis will deploy that branch to Heroku. Follow these steps to enable this feature.

@@ -2,6 +2,33 @@
 # ------------------------------------------------------------------------------
 USE_DOCKER=yes
 IPYTHONDIR=/app/.ipython
+
+# DJANGO_READ_DOT_ENV_FILE=True
+DJANGO_SETTINGS_MODULE=config.settings.local
+DJANGO_SECRET_KEY=YkqAxoMJf6jLyM1pCUO916PHcasjW4drGErtNyNif82Xhq5Wq04WIC4LWE57u8Dc
+DJANGO_ADMIN_URL=gishWtPC52lUJMlT6nnQenBcabs6sC2l/
+DJANGO_ALLOWED_HOSTS=.example.com
+DOCKER
+# Security
+# ------------------------------------------------------------------------------
+# TIP: better off using DNS, however, redirect is OK too
+DJANGO_SECURE_SSL_REDIRECT=False
+
+# Email
+# ------------------------------------------------------------------------------
+MAILGUN_API_KEY=
+DJANGO_SERVER_EMAIL=
+MAILGUN_DOMAIN=
+
+# django-allauth
+# ------------------------------------------------------------------------------
+DJANGO_ACCOUNT_ALLOW_REGISTRATION=True
+
+# Gunicorn
+# ------------------------------------------------------------------------------
+WEB_CONCURRENCY=4
+
+
 # Redis
 # ------------------------------------------------------------------------------
 REDIS_URL=redis://redis:6379/0
@@ -11,5 +38,5 @@ REDIS_URL=redis://redis:6379/0
 
 # Flower
 CELERY_FLOWER_USER=fTDMcsqPdwEgxbHPtKKycCTMXgnFxzXV
-CELERY_FLOWER_PASSWORD=jsfTs5DS6SphsJVpEsWcoq61XzjedlTlu61InUc8w8U0u4Ab35qHeXUtDWq1Gy0G
+CELERY_FLOWER_PASSWORD=Uk6tqbENtjvp0WhBdriclMPv5aYaqUf8xZWcemKYGWYUGIOCgAlhF295lFn8Ftbq
 

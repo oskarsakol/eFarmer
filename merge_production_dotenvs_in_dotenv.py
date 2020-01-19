@@ -4,10 +4,10 @@ from typing import Sequence
 import pytest
 
 ROOT_DIR_PATH = os.path.dirname(os.path.realpath(__file__))
-PRODUCTION_DOTENVS_DIR_PATH = os.path.join(ROOT_DIR_PATH, ".envs", ".production")
-PRODUCTION_DOTENV_FILE_PATHS = [
-    os.path.join(PRODUCTION_DOTENVS_DIR_PATH, ".django"),
-    os.path.join(PRODUCTION_DOTENVS_DIR_PATH, ".postgres"),
+SPECIFIC_DOTENVS_DIR_PATH = os.path.join(ROOT_DIR_PATH, ".envs", ".local")
+SPECIFIC_DOTENV_FILE_PATHS = [
+    os.path.join(SPECIFIC_DOTENVS_DIR_PATH, ".django"),
+    os.path.join(SPECIFIC_DOTENVS_DIR_PATH, ".postgres"),
 ]
 DOTENV_FILE_PATH = os.path.join(ROOT_DIR_PATH, ".env")
 
@@ -25,7 +25,7 @@ def merge(
 
 
 def main():
-    merge(DOTENV_FILE_PATH, PRODUCTION_DOTENV_FILE_PATHS)
+    merge(DOTENV_FILE_PATH, SPECIFIC_DOTENV_FILE_PATHS)
 
 
 @pytest.mark.parametrize("merged_file_count", range(3))

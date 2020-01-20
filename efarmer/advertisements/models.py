@@ -11,11 +11,11 @@ class Advertisement(models.Model):
     date_from = models.DateTimeField(auto_now_add=True, blank=True)
     date_to = models.DateTimeField(null=True, blank=True)
     description = models.CharField(_('description'), max_length=255, blank=True)
-    picture = models.FileField()
-    price = models.IntegerField()
+    picture = models.ImageField()
+    price = models.DecimalField(decimal_places=2, max_digits=16)
     delivery_address = models.ForeignKey(User, on_delete=models.CASCADE, related_name='delivery_address',
                                          blank=True)
-    views = models.IntegerField()
+    views = models.PositiveIntegerField()
 
     def __str__(self):
         return self.name

@@ -324,7 +324,7 @@ tags
 ### Project template
 
 project_test/media/
-
+efarmer/media/
 .pytest_cache/
 
 

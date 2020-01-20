@@ -11,6 +11,7 @@ User = get_user_model()
 
 class UserViewSet(mixins.RetrieveModelMixin,
                   mixins.UpdateModelMixin,
+                  mixins.ListModelMixin,
                   viewsets.GenericViewSet):
     """
     Updates and retrieves user accounts

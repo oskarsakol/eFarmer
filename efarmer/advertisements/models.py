@@ -8,14 +8,14 @@ User = get_user_model()
 class Advertisement(models.Model):
     name = models.CharField(_('name'), max_length=30, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ads', blank=True)
-    date_from = models.DateTimeField(auto_now_add=True, blank=True)
-    date_to = models.DateTimeField(null=True, blank=True)
+    auction_from = models.DateTimeField(auto_now_add=True, blank=True)
+    auction_to = models.DateField(null=True, blank=True)
     description = models.CharField(_('description'), max_length=255, blank=True)
     picture = models.ImageField()
     price = models.DecimalField(decimal_places=2, max_digits=16)
     delivery_address = models.ForeignKey(User, on_delete=models.CASCADE, related_name='delivery_address',
                                          blank=True)
-    views = models.PositiveIntegerField()
+    views = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.name

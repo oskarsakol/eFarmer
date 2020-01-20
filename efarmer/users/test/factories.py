@@ -17,3 +17,6 @@ class UserFactory(factory.django.DjangoModelFactory):
     last_name = factory.Faker('last_name')
     is_active = True
     is_staff = False
+    address = factory.Faker('address')
+    city = factory.Faker('city')
+    phone = '123456789'

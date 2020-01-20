@@ -11,6 +11,7 @@ User = get_user_model()
 
 
 class AdvertisementViewSet(mixins.RetrieveModelMixin,
+                           mixins.ListModelMixin,
                            mixins.UpdateModelMixin,
                            mixins.CreateModelMixin,
                            viewsets.GenericViewSet):

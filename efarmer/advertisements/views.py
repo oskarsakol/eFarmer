@@ -4,7 +4,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DetailView
 
 from efarmer.advertisements.models import Advertisement
-from efarmer.users.permissions import IsUserOrReadOnly
 from .serializers import AdvertisementSerializer
 
 User = get_user_model()
@@ -20,7 +19,6 @@ class AdvertisementViewSet(mixins.RetrieveModelMixin,
     """
     queryset = Advertisement.objects.all()
     serializer_class = AdvertisementSerializer
-    permission_classes = (IsUserOrReadOnly,)
 
 
 class AdvertisementDetailView(LoginRequiredMixin, DetailView):

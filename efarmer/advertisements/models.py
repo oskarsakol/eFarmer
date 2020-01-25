@@ -13,9 +13,14 @@ class Advertisement(models.Model):
     description = models.CharField(_('description'), max_length=255, blank=True)
     picture = models.ImageField()
     price = models.DecimalField(decimal_places=2, max_digits=16)
-    delivery_address = models.ForeignKey(User, on_delete=models.CASCADE, related_name='delivery_address',
-                                         blank=True)
     views = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.name
+
+    @property
+    def delivery_address(self):
+        """
+        :return: combined user address information
+        """
+        return self.user.address + ' ' + self.user.city + ' ' + self.user.zip_code

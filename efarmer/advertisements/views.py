@@ -20,6 +20,9 @@ class AdvertisementViewSet(mixins.RetrieveModelMixin,
     queryset = Advertisement.objects.all()
     serializer_class = AdvertisementSerializer
 
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
 
 class AdvertisementDetailView(LoginRequiredMixin, DetailView):
     model = Advertisement

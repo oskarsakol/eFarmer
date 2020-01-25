@@ -25,6 +25,7 @@ DEBUG = env.bool("DJANGO_DEBUG", True)
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # though not all of them may be available with every OS.
 # In Windows, this must be set to your system time zone.
+# DATETIME_FORMAT = '%d-%m-%Y %H:%M:%S'
 TIME_ZONE = "Europe/Warsaw"
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = "en-us"
@@ -74,7 +75,8 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "efarmer.users.apps.UsersConfig",
-    "efarmer.advertisements.apps.AdvertisementsConfig"
+    "efarmer.advertisements.apps.AdvertisementsConfig",
+    "efarmer.user_reviews.apps.UserReviewsConfig"
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
